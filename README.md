@@ -1,7 +1,7 @@
 # VCTree-Visual-Question-Answering
-Code for the Visual Question Answering (VQA) part of CVPR 2019 oral paper: "[Learning to Compose Dynamic Tree Structures for Visual Contexts][0]"
+Code for the VQA part of CVPR 2019 oral paper: "[Learning to Compose Dynamic Tree Structures for Visual Contexts][0]"
 
-The code is directly modified from that project [Cyanogenoid/vqa-counting][1]. We mainly modified the model.py, train.py, config.py and add several files about our VCTree model, such as all tree_*.py, gen_tree_net.py.  Before we got our final model, we tried lots of different tree structures, hence you may found some strange code such as config.gen_tree_mode and the corresponding choices in tree_feature.py. Just ignore them. (I'm too lazy to purge the code, sorry about that)
+The code is directly modified from the project [Cyanogenoid/vqa-counting][1]. We mainly modified the model.py, train.py, config.py and add several files about our VCTree model, such as all tree_*.py, gen_tree_net.py.  Before we got our final model, we tried lots of different tree structures, hence you may found some strange code such as config.gen_tree_mode and the corresponding choices in tree_feature.py. Just ignore them. (I'm too lazy to purge the code, sorry about that)
 
 ## Dependencies
 This code was confirmed to run with the following environment:
@@ -28,7 +28,7 @@ This creates an `h5py` database (95 GiB) containing the object proposal features
     - Put corresponding models under  ./data  and change the name to vgrel-29.tar or vgrel-19.tar depending on your config.output_size
 
 # Train your model
-Note that the proposed hybird learning strategy needs to manually iteratively change the config.use_rl = False or True and use -resume to load model from previous stage (which is quite stupid). So you can just first start with config.use_rl = False
+Note that the proposed hybird learning strategy needs to manually iteratively change the config.use_rl = False or True and use -resume to load the model from previous stage (which is quite stupid). So you can just first start with config.use_rl = False
 
 The rest instruction is similar to original project [Cyanogenoid/vqa-counting][1]
 
@@ -52,8 +52,8 @@ To customise what categories are shown, you can modify the "accept conditions" f
 
 
 # Sometime You Need To Know
-- Currently, the default setting is what I used to train my model reported in [Learning to Compose Dynamic Tree Structures for Visual Contexts][0]. However, since the model takes lots of epoches (about 80-100) to converge. It may takes a long time, so I didn't try too many hyperparameters. After the CVPR deadline, I found that using larger size of hidden dimension at some places may further improve the performance a little bit.
-- The current training strategy of our VQA model is following [Learning to Count Objects in Natural Images for Visual Question Answering][5] (simple Linear + optim.Adam + continues decay at each batch + large number of epoches). However, we found that using an alternative Strategy (WeightNorm Linear + optim.Adamax + lr warm-up) will only take no more than 15 epoches to converge. So you can try this learning strategy if you are interested. You may check my [another project][6] 
+- Currently, the default setting is what I used to train my model reported in [Learning to Compose Dynamic Tree Structures for Visual Contexts][0]. However, since the model takes lots of epoches (about 80-100) to converge. It may takes a long time, so I didn't try too many settings for hyperparameters. After the CVPR deadline, I found that using larger size of hidden dimension at some places may further improve the performance a little bit.
+- The current training strategy of our VQA model is follow the paper [Learning to Count Objects in Natural Images for Visual Question Answering][5], i.e., (simple Linear + optim.Adam + continues decay at each batch + large number of epoches). However, we found that using an alternative Strategy (WeightNorm Linear + optim.Adamax + lr warm-up) will only take no more than 15 epoches to converge. So you can try this learning strategy if you want. You may check my [another project][6] about the reimplementations of some recent(2018) state-of-the-art VQA models using this strategy.
 
 
 [0]: https://arxiv.org/abs/1812.01880
