@@ -55,6 +55,15 @@ To customise what categories are shown, you can modify the "accept conditions" f
 - Currently, the default setting is what I used to train my model reported in [Learning to Compose Dynamic Tree Structures for Visual Contexts][0]. However, since the model takes lots of epoches (about 80-100) to converge. It may takes a long time, so I didn't try too many settings for hyperparameters. After the CVPR deadline, I found that using larger size of hidden dimension at some places may further improve the performance a little bit.
 - The current training strategy of our VQA model is follow the paper [Learning to Count Objects in Natural Images for Visual Question Answering][5], i.e., (simple Linear + optim.Adam + continues decay at each batch + large number of epoches). However, we found that using an alternative Strategy (WeightNorm Linear + optim.Adamax + lr warm-up) will only take no more than 15 epoches to converge. So you can try this learning strategy if you want. You may check my [another project][6] about the reimplementations of some recent(2018) state-of-the-art VQA models using this strategy.
 
+# If this paper/project inspires your work, pls cite our work:
+```
+@inproceedings{tang2018learning,
+  title={Learning to Compose Dynamic Tree Structures for Visual Contexts},
+  author={Tang, Kaihua and Zhang, Hanwang and Wu, Baoyuan and Luo, Wenhan and Liu, Wei},
+  booktitle= "Conference on Computer Vision and Pattern Recognition",
+  year={2019}
+}
+```
 
 [0]: https://arxiv.org/abs/1812.01880
 [1]: https://github.com/Cyanogenoid/vqa-counting
