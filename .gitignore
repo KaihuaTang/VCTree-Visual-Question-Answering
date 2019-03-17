@@ -1,0 +1,6 @@
+__pycache__
+*.pyc
+*.pth
+val_acc.png
+results.json
+vocab.json
