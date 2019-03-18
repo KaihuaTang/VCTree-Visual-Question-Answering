@@ -163,11 +163,11 @@ def main():
     # 'data/vgrel-29.tar' for 36
     # 'data/vgrel-19.tar' for 10-100
     if config.output_size == 36:
-        print("load data/vgrel-29.tar")
-        ckpt = torch.load('data/vgrel-29.tar')
+        print("load data/vgrel-29(transfer36).tar")
+        ckpt = torch.load('data/vgrel-29(transfer36).tar')
     else:
-        print("load data/vgrel-19.tar")
-        ckpt = torch.load('data/vgrel-19.tar')
+        print("load data/vgrel-19(transfer110).tar")
+        ckpt = torch.load('data/vgrel-19(transfer110).tar')
     
     utils.optimistic_restore(net.tree_lstm.gen_tree_net, ckpt['state_dict'])
     
