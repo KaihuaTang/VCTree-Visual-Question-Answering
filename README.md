@@ -1,5 +1,5 @@
 # VCTree-Visual-Question-Answering
-Code for the VQA part of CVPR 2019 oral paper: "[Learning to Compose Dynamic Tree Structures for Visual Contexts][0]"
+Code for the VQA part of CVPR 2019 oral paper: "[Learning to Compose Dynamic Tree Structures for Visual Contexts][0]", as to the Scene Graph Generation part of this paper, please refer to [KaihuaTang/VCTree-Scene-Graph-Generation][7]
 
 UGLY CODE WARNING! UGLY CODE WARNING! UGLY CODE WARNING!
 
@@ -74,3 +74,4 @@ To customise what categories are shown, you can modify the "accept conditions" f
 [4]: https://github.com/Cyanogenoid/vqa-counting/tree/master/vqa-v2
 [5]: https://openreview.net/forum?id=B12Js_yRb
 [6]: https://github.com/KaihuaTang/VQA2.0-Recent-Approachs-2018.pytorch
+[7]: https://github.com/KaihuaTang/VCTree-Scene-Graph-Generation
