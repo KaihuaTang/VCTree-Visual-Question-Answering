@@ -1,6 +1,8 @@
 # VCTree-Visual-Question-Answering
 Code for the VQA part of CVPR 2019 oral paper: "[Learning to Compose Dynamic Tree Structures for Visual Contexts][0]"
 
+UGLY CODE WARNING! UGLY CODE WARNING! UGLY CODE WARNING!
+
 The code is directly modified from the project [Cyanogenoid/vqa-counting][1]. We mainly modified the model.py, train.py, config.py and add several files about our VCTree model, such as all tree_*.py, gen_tree_net.py.  Before we got our final model, we tried lots of different tree structures, hence you may found some strange code such as config.gen_tree_mode and the corresponding choices in tree_feature.py. Just ignore them. (I'm too lazy to purge the code, sorry about that)
 
 ## Dependencies
